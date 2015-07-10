@@ -53,3 +53,26 @@ Template.home.events({
 		// }));
 	}
 });
+
+isConfig = false
+
+Template.home.helpers({
+	createConfig: function() {
+		console.log(isConfig);
+		if(isConfig == false) {
+			isConfig = true;
+			console.log("Inside CreateConfig");
+			if(UserConfigs.find({userId: Meteor.user()._id}).count() === 0){
+				UserConfigs.insert({
+					userId: Meteor.user()._id,
+					battles: [],
+					advantages: [],
+					friends: [],
+					exp: 0,
+					level: 1
+				});
+			}
+		}
+	return "ASDAFASDF";
+	}
+});
