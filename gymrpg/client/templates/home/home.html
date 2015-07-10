@@ -1,18 +1,37 @@
 <template name="home">
   <div class="template-home">
-    <div class="page-header">
-      <img src="/images/mountains.png" />
-    </div>
+    <img src="/images/mountains.png" class="img-responsive" />
     <hr />
-
-    <h3><i class="fa fa-arrow-up purple"></i> Level Up! </h3>
-
+    <div class="row home-div">
     {{#if currentUser}}
       {{createConfig}}
     {{/if}}
-    <p>
-      Challenge your friends or random enemies in a match of physical activity and wellness. Battle for points and then use them to level up and get advantages in future matches. The higher the level you reach, the better you will feel. Reach level 99 and you'll unlock extra features and enjoy an ad-free experience.
-    </p>
+    	<div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
+	    	<center><h1><img src="/images/challenge-large.png" /> Battle </h1></center>
+	    	<p>
+		      Use your fitbit to challenge your friends or random enemies in a match of physical activity and wellness. Battle for points and then use them to level up and get advantages in future matches. Become victorious by reaching your step goal, staying active, and being prepared for whatever obstacles your opponent may throw at you!
+		    </p>
+		</div>
+	</div>
+	<hr />
+    <div class="row home-div">
+    	<div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
+	    	<center><h1><i class="fa fa-arrow-up purple"></i> Level Up! </h1></center>
+	    	<p>
+		      The more battles you win, the higher you will climb. Feel better and reach a healthy lifestyle by training in a fun and competitive way. Reach level 99 and you'll unlock extra features and enjoy an ad-free experience.
+		    </p>
+		</div>
+	</div>
+    <hr />
+    <div class="row home-div">
+    	<div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
+		    <center><h1><i class="fa fa-plus purple"></i> Strategize </h1></center>
+		    <p>
+		      Reaching higher levels will allow you to select power-ups or debuffs that you can use in later battles to give yourself an advantage when you need it. Use them wisely and catch your opponent off-guard for the win.
+		    </p>
+		</div>
+	</div>
+	<hr />
     <form>
     <button id="fitbitprofile">CLICK ME</button>
     </form>
