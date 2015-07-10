@@ -21,8 +21,9 @@ Template.home.events({
 	'click #fitbitprofile': function(e){
 		e.preventDefault();
 		console.log("Inside click event");
-		var steps = Meteor.call('mySteps');
-		console.log (steps);
+		Meteor.call('mySteps', function(error, result){
+			console.log(result);
+		});
 		// console.log(Meteor.user().services.fitbit.accessTokenSecret);
 		// console.log(new Fitbit());
 		// var authkey = "OAuth oauth_consumer_key=\"e9d83c7bfc19e1edef8619dc6f1cc8b0\","
@@ -50,5 +51,28 @@ Template.home.events({
 		// 	}, function(err, result){
 		// 	console.log(result);
 		// }));
+	}
+});
+
+isConfig = false
+
+Template.home.helpers({
+	createConfig: function() {
+		console.log(isConfig);
+		if(isConfig == false) {
+			isConfig = true;
+			console.log("Inside CreateConfig");
+			if(UserConfigs.find({userId: Meteor.user()._id}).count() === 0){
+				UserConfigs.insert({
+					userId: Meteor.user()._id,
+					battles: [],
+					advantages: [],
+					friends: [],
+					exp: 0,
+					level: 1
+				});
+			}
+		}
+	return "ASDAFASDF";
 	}
 });
