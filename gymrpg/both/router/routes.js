@@ -11,6 +11,8 @@ Router.route('/dashboard', {
   controller: 'DashboardController'
 });
 
+
+
 Router.plugin('ensureSignedIn', {
   only: ['dashboard']
 });
