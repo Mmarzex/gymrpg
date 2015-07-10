@@ -22,3 +22,10 @@ iron:router@1.0.0
 yasinuslu:blaze-meta
 aldeed:collection2
 aldeed:autoform
+accounts-ui
+mrt:accounts-fitbit
+accounts-twitter
+accounts-github
+mrt:fitbit-api
+oauth
+service-configuration
