@@ -18,7 +18,8 @@ Meteor.methods({
 
 		var data = fitbit.getSteps().data;
 		console.log("Inside mySteps");
-		console.log(fitbit.getSteps());
+		console.log(data);
+		return data;
 		// for (var key in data["activities-steps"])
 		// 	ActivitiesSteps.update(
 		// 		{ dateTime: data["activities-steps"][key]["dateTime"]},
