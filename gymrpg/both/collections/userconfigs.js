@@ -3,6 +3,11 @@ UserConfigs = new Mongo.Collection('userconfigs');
 UserConfigs.helpers({
 
 });
+
+Meteor.publish('userconfigs', function(){
+	return UserConfigs.find();
+});
+
 UserConfigs.allow({
 		'insert': function(userId,doc){
 			return true;

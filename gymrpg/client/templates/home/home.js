@@ -3,6 +3,8 @@ Meteor.autosubscribe(function(){
 	Meteor.subscribe('currentAccessToken');
 });
 
+Meteor.subscribe("userconfigs");
+
 Template.home.rendered = function() {
 
 	ServiceConfiguration.configurations.remove({
