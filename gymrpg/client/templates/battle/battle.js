@@ -101,6 +101,7 @@ Template.battle.helpers({
 		return playerTwoAchievements;
 	},
 
+<<<<<<< HEAD
 	checkForGameOver: function() {
 		var battleId = Session.get('currentBattle');
 		var battle = Battles.find({_id: battleId});
@@ -123,4 +124,13 @@ Template.battle.helpers({
 			}
 		}
 	}		
+=======
+	divideBy: function(number) {
+		return number / 100;
+	},
+
+	multiplyByTen: function(number)	{
+		return number * 10;
+	}	
+>>>>>>> master
 });
