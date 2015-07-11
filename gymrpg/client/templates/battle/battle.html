@@ -16,17 +16,17 @@
 			{{#each getP1Achievements}}
 				{{#if sleepGoal}}
 					<div class="achievement">
-						<h4><i class="fa fa-bed"></i> Slept 7+ Hours: <span class="purple">+10</span></h4>
+						<h5><i class="fa fa-bed"></i> Slept 7+ Hours: <span class="purple">+10</span></h5>
 					</div>
 				{{/if}}
 				<div class="achievement">
-					<h4><img src="/images/feet.png" /> Steps So Far: <span class="purple">{{currentSteps}}</span></h4>
+					<h5><img src="/images/feet.png" /> Points From Steps: <span class="purple">{{divideBy currentSteps}}</span></h5>
 				</div>
 				<div class="achievement">
-					<h4><img src="/images/steps.png" /> Floors Climbed: <span class="purple">{{currentFloors}}</span></h4>
+					<h5><img src="/images/steps.png" /> Points From Climbed Floors: <span class="purple">{{multiplyByTen currentFloors}}</span></h5>
 				</div>
 				<div class="achievement">
-					<h4><i class="fa fa-clock-o"></i> Active Minutes: <span class="purple">{{currentActiveMinutes}}</span></h4>
+					<h5><i class="fa fa-clock-o"></i> Active Minutes: <span class="purple">{{currentActiveMinutes}}</span></h5>
 				</div>
 			{{/each}}
 			<br />
@@ -61,21 +61,23 @@
 			{{#each getP2Achievements}}
 				{{#if sleepGoal}}
 					<div class="achievement">
-						<h4><i class="fa fa-bed"></i> Slept 7+ Hours: <span class="purple">+10</span></h4>
+						<h5><i class="fa fa-bed"></i> Slept 7+ Hours: <span class="purple">+10</span></h5>
 					</div>
 				{{/if}}
 				<div class="achievement">
-					<h4><img src="/images/feet.png" /> Steps So Far: <span class="purple">{{currentSteps}}</span></h4>
+					<h5><img src="/images/feet.png" />  Points From Steps: <span class="purple">{{divideBy currentSteps}}</span></h5>
 				</div>
 				<div class="achievement">
-					<h4><img src="/images/steps.png" /> Floors Climbed: <span class="purple">{{currentFloors}}</span></h4>
+					<h5><img src="/images/steps.png" />Points From Climbed Floors: <span class="purple">{{multiplyByTen currentFloors}}</span></h5>
 				</div>
 				<div class="achievement">
-					<h4><i class="fa fa-clock-o"></i> Active Minutes: <span class="purple">{{currentActiveMinutes}}</span></h4>
+					<h5><i class="fa fa-clock-o"></i> Active Minutes: <span class="purple">{{currentActiveMinutes}}</span></h5>
 				</div>
 			{{/each}}
 			</center>
 		</div>
 		{{/each}}
 	</div>
+
+	{{checkForGameOver}}
 </template>
