@@ -1,68 +1,96 @@
 <template name="dashboard">
   <div class="template-dashboard">
-    <div class="page-header">
-      <h1>About You</h1>
+    <div class="row top">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <center>
+        <h1>{{currentUser.profile.fullName}}'s Profile</h1>
+        </center>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <center>
+          <h1>XP: <span class="purple">{{currentConfig.exp}}</span></h1>
+        </center>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <center>
+        <h1>Level: <span class="purple">{{currentConfig.level}}</span></h1>
+        </center>
+      </div>
     </div>
-
-      {{#if currentUser}}
-        <style type="text/css">
-          .tg  {border-collapse:collapse;border-spacing:0;border-color:#bbb;}
-          .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#E0FFEB;}
-          .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#9DE0AD;}
-          .tg .tg-thls{background-color:#009901}
-          </style>
-          <table class="tg">
-            <tr>
-              <th class="tg-thls">
-                Name
-              </th>
-              <th class="tg-031e">
-                {{currentUser.profile.fullName}}
-              </th>
-            </tr>
-            <td class="tg-thls">
-                Level
-              </td>
-              <td class="tg-031e">
-                {{currentConfig.level}}
-              </td>
-            <tr>
-              <td class="tg-thls">
-                XP
-              </td>
-              <td class="tg-031e">{{currentConfig.exp}}</td>
-            </tr>
-            <tr>
-              <td class="tg-thls">
-                XP to Next Level
-              </td>
-              <td class="tg-031e">{{experienceToLevelUp}}</td>
-            </tr>
-            <tr>
-              <td class="tg-thls">
-                Battles Won
-              </td>
-              <td class="tg-031e">
-                {{currentConfig.battles.length}}
-              </td>
-            </tr>
-            <td class="tg-thls">
-                Average Daily Steps
-              </td>
-              <td class="tg-031e">
-                {{currentUser.profile.averageDailySteps}}
-              </td>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        {{#if currentUser}}
+          <h5><b>Info:</b></h5>
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <td>
+                  Level
+                </td>
+                <td>
+                  {{currentConfig.level}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  XP
+                </td>
+                <td>
+                  {{currentConfig.exp}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  XP to Next Level
+                </td>
+                <td>
+                  {{experienceToLevelUp}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Battles Won
+                </td>
+                <td>
+                  {{currentConfig.battles.length}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Average Daily Steps
+                </td>
+                <td>
+                  {{currentUser.profile.averageDailySteps}}
+                </td>
+              </tr>
+            </tbody>
           </table>
-
-      {{/if}}
-
-      <input id="clickMe" type="button" value="Click to add XP" />
-
+          {{/if}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <h5><b>Advantages:</b></h5>
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <td>
+                  <div class="friend-btns"><i class="fa fa-asterisk purple"></i> Gain x2 Points for Running During Battle</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="friend-btns"><i class="fa fa-asterisk purple"></i> -50 Points to Your Opponent</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="friend-btns"><i class="fa fa-asterisk purple"></i> Headstart: Begin a Battle With 50 Points</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
   </div>
-
-
-  {{>gaugeReactiveDemo}}
-
 
 </template>
 

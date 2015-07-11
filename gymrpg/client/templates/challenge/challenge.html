@@ -1,16 +1,16 @@
 <template name="challenge">
-	<div class="row btn-pad">
+	<div class="row">
 		<center>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">		
-			<button id="friendBattleModalButton" class="btn btn-primary" data-toggle="modal" data-target="#friendBattle"><h3>Battle a Friend</h3></button>
-			<button id="randomBattleButton" class="btn btn-primary" href="#"><h3>Find Random Opponent</h3></button>
+			<button id="friendBattleModalButton" class="btn btn-primary btn-pad" data-toggle="modal" data-target="#friendBattle"><h3>Battle a Friend</h3></button>
+			<button id="randomBattleButton" class="btn btn-primary btn-pad" href="#"><h3>Find Random Opponent</h3></button>
 		</div>
 		</center>
 	</div>
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-12 col-sx-12">
 			<div class="basic-div">
-				<h3> Your Current Battles: </h3>
+				<h3> Current Battles: </h3>
 					{{#each meBattles}}
 					<!-- Loop through users in current users "battle list" -->
 					<button id="battleButton" class="btn btn-lg btn-block btn-default battles" battleId="{{_id}}" href="{{pathFor 'battle'}}">
@@ -23,8 +23,7 @@
 			<div class="basic-div">
 				<h3>Friends:</h3>
 				{{#each meFriends}}
-					<button class="btn btn-lg btn-block btn-default battles">
-						<h4><i class="fa fa-user"></i> &nbsp;{{user.displayName}}</h4>
+					<button class="btn btn-lg btn-block btn-default friends"><h4><i class="fa fa-user"></i> &nbsp;{{user.displayName}}</h4>
 					</button>
 				{{/each}}
 			</div>
