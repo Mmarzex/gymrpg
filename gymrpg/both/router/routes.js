@@ -15,6 +15,10 @@ Router.route('/dashboard', {
   controller: 'DashboardController'
 });
 
+Router.route('/rules', {
+	name: 'rules',
+});
+
 
 
 Router.plugin('ensureSignedIn', {
