@@ -99,5 +99,13 @@ Template.battle.helpers({
 		playerTwoAchievements.currentSteps = playerTwoAchievements.currentSteps / 100;
 		playerTwoAchievements.currentFloors = playerTwoAchievements.currentFloors * 10;
 		return playerTwoAchievements;
-	}		
+	},
+
+	divideBy: function(number) {
+		return number / 100;
+	},
+
+	multiplyByTen: function(number)	{
+		return number * 10;
+	}	
 });
