@@ -13,9 +13,22 @@ UserConfigs.allow({
 			return true;
 		}
 	});
+UserConfigs.allow({
+		'update': function(userId,doc){
+			return true;
+		}
+	});
+
+
 if(Meteor.is_server) {
 	UserConfigs.allow({
 		'insert': function(userId,doc){
+			return true;
+		}
+	});
+
+	UserConfigs.allow({
+		'update': function(userId,doc){
 			return true;
 		}
 	});
