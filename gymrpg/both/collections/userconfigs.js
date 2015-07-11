@@ -4,9 +4,10 @@ UserConfigs.helpers({
 
 });
 
-Meteor.publish('userconfigs', function(){
-	return UserConfigs.find();
-});
+if(Meteor.is_server)
+	Meteor.publish('userconfigs', function(){
+		return UserConfigs.find();
+	});
 
 UserConfigs.allow({
 		'insert': function(userId,doc){

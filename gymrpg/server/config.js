@@ -31,9 +31,22 @@ Meteor.methods({
 		// 			},
 		// 		{ upsert: true }
 		// 	)
+	},
+	getFriends: function() {
+		var result = fitbit.get('user/-/friends.json');
+		console.log(result);
+		return result.data.friends;
+	},
+
+	getFriendsIdByName: function(displayName) {
+		console.log(displayName);
+		var userId = Meteor.users.findOne({'profile.displayname': displayName});
+
+		return userId;
+
 	}
 });
 
 Meteor.publish("currentAccessToken", function(){
 	return Meteor.users.find(this.userId, {fields: {'services.fitbit.accessToken': 1, 'services.fitbit.accessTokenSecret': 1}});
-});;
+});
