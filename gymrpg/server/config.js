@@ -102,6 +102,7 @@ Meteor.methods({
 			});
 		}
 
+
 		var currentAchievements = Achievements.findOne({battleId: battleId, userId: userId});
 
 		// Calculate Sleep Points
@@ -137,6 +138,16 @@ Meteor.methods({
 		} else {
 			Battles.update({_id: battleId}, {$set: {"p2_points": battle.p2_points + score}});
 		}
+
+		var x = UserConfigs.findOne({userId: Meteor.userId()});
+		UserConfigs.update({_id: x._id},{$set: {exp : x.exp + 50 + (score / .1) }});
+
+		if(x.exp >= 100)
+		{
+			UserConfigs.update({_id: x._id},{$set: {exp : x.exp - x.exp}});
+			UserConfigs.update({_id: x._id},{$set: {level: x.level+1}});
+		}
+
 		return currentAchievements;
 	}
  });
