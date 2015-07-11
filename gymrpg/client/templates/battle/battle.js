@@ -85,5 +85,19 @@ Template.battle.helpers({
 	isPlayerTwoWinning: function() {
 		var battle = Session.get('currentBattleObject');
 		return battle.p1_points < battle.p2_points;
-	}
+	},
+	getP1Achievements: function() {
+		var battle = Session.get('currentBattleObject');
+		var playerOneAchievements = Achievements.find({battleId: Session.get('currentBattle'), userId: battle.playerOne});
+		playerOneAchievements.currentSteps = playerOneAchievements.currentSteps / 100;
+		playerOneAchievements.currentFloors = playerOneAchievements.currentFloors * 10;
+		return playerOneAchievements;
+	},
+	getP2Achievements: function() {
+		var battle = Session.get('currentBattleObject');
+		var playerTwoAchievements = Achievements.find({battleId: Session.get('currentBattle'), userId: battle.playerTwo});
+		playerTwoAchievements.currentSteps = playerTwoAchievements.currentSteps / 100;
+		playerTwoAchievements.currentFloors = playerTwoAchievements.currentFloors * 10;
+		return playerTwoAchievements;
+	}		
 });
