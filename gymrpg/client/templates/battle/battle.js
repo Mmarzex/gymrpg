@@ -101,6 +101,30 @@ Template.battle.helpers({
 		return playerTwoAchievements;
 	},
 
+<<<<<<< HEAD
+	checkForGameOver: function() {
+		var battleId = Session.get('currentBattle');
+		var battle = Battles.find({_id: battleId});
+		var endTime = battle.createdAt;
+
+		endTime.setHours(endTime.getHours()+24);
+
+		if(moment().toDate().hours < endTime)
+		{
+			if (battle.p1_points > battle.p2_points)
+			{
+				var winner = UserConfigs.findOne({userId: battle.playerOne});
+				UserConfigs.update({_id: winner._id},{$set: {exp : winner.exp + p1_points / .1}});
+			}
+
+			else
+			{
+				var winner = UserConfigs.findOne({userId: battle.playerTwo});
+				UserConfigs.update({_id: winner._id},{$set: {exp : winner.exp + p2_points / .1}});
+			}
+		}
+	}		
+=======
 	divideBy: function(number) {
 		return number / 100;
 	},
@@ -108,4 +132,5 @@ Template.battle.helpers({
 	multiplyByTen: function(number)	{
 		return number * 10;
 	}	
+>>>>>>> master
 });
