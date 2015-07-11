@@ -20,24 +20,38 @@
                 {{currentUser.profile.fullName}}
               </th>
             </tr>
+            <td class="tg-thls">
+                Level
+              </td>
+              <td class="tg-031e">
+                {{currentConfig.level}}
+              </td>
             <tr>
               <td class="tg-thls">
                 XP
               </td>
-              <td class="tg-031e"></td>
+              <td class="tg-031e">{{currentConfig.exp}}</td>
             </tr>
             <tr>
               <td class="tg-thls">
                 XP to Next Level
               </td>
-              <td class="tg-031e"></td>
+              <td class="tg-031e">{{experienceToLevelUp}}</td>
             </tr>
             <tr>
               <td class="tg-thls">
                 Battles Won
               </td>
-              <td class="tg-031e"></td>
+              <td class="tg-031e">
+                {{currentConfig.battles.length}}
+              </td>
             </tr>
+            <td class="tg-thls">
+                Average Daily Steps
+              </td>
+              <td class="tg-031e">
+                {{currentUser.profile.averageDailySteps}}
+              </td>
           </table>
 
       {{/if}}
