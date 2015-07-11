@@ -2,8 +2,8 @@
 	<div class="row btn-pad">
 		<center>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">		
-			<button class="btn btn-primary" href="#"><h3>Battle a Friend</h3></button>
-			<button class="btn btn-primary" href="#"><h3>Find Random Opponent</h3></button>
+			<button id="friendBattleModalButton" class="btn btn-primary" data-toggle="modal" data-target="#friendBattle"><h3>Battle a Friend</h3></button>
+			<button id="randomBattleButton" class="btn btn-primary" href="#"><h3>Find Random Opponent</h3></button>
 		</div>
 		</center>
 	</div>
@@ -11,15 +11,44 @@
 		<div class="col-lg-6 col-md-6 col-sm-12 col-sx-12">
 			<div class="challenge-div">
 				<h3> Your Current Battles: </h3>
+					{{#each meBattles}}
 					<!-- Loop through users in current users "battle list" -->
-					<div class="battles"> Start a new battle? </div>
+					<button id="battleButton" class="btn btn-lg btn-block btn-default battles" href="{{pathFor 'battle'}}">
+						<h4><img src="/images/challenge-large.png"> &nbsp;{{playerOneName}} <b>vs</b> {{playerTwoName}} </h4>
+					</button>
+					{{/each}}
 			</div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-sx-12">
 			<div class="challenge-div">
 				<h3>Friends:</h3>
+				{{#each meFriends}}
+					<button class="btn btn-lg btn-block btn-default battles">
+						<h4><i class="fa fa-user"></i> &nbsp;{{user.displayName}}</h4>
+					</button>
+				{{/each}}
 			</div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="friendBattle">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title">Choose a Friend to Battle</h4>
+      			</div>
+      		<div class="modal-body">
+        		{{#each meFriends}}
+        			<div class="row">
+        				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        					<button id="friendBattleButton" data-dismiss="modal" class="btn btn-default friend-btns" href="#">{{user.displayName}}</button>
+        				</div>
+        			</div>
+        		{{/each}}
+      		</div>
+    	</div>
+  	</div>
+</div>
 
 </template>
