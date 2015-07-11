@@ -28,7 +28,7 @@ Template.dashboard.events({
 
 		UserConfigs.update({_id: x._id},{$set: {exp : x.exp+20}});
 
-		if(x.exp >== 100)
+		if(x.exp >= 100)
 		{
 			UserConfigs.update({_id: x._id},{$set: {exp : x.exp-x.exp}});
 		}

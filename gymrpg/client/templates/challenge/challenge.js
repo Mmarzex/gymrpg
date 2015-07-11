@@ -70,7 +70,9 @@ Template.challenge.events({
 	'click #battleButton': function(e) {
 		e.preventDefault();
 		console.log("BATTLE BBUTTON");
-		Router.go('/battle');
+		console.log(e.currentTarget.attributes[2].nodeValue);
+		Session.set('currentBattle', e.currentTarget.attributes[2].nodeValue);
+		Router.go('/battle', {_id: e.currentTarget.attributes[2].nodeValue});
 	}
 });
 
