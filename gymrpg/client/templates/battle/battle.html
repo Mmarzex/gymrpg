@@ -15,11 +15,19 @@
 				<h6>points</h6>
 			</div>
 			{{#each getP1Achievements}}
-				<div class="basic-div">
-					{{#if sleepGoal}}
+				{{#if sleepGoal}}
+					<div class="achievement">
 						<h4><i class="fa fa-bed"></i> Slept 7+ Hours: <span class="purple">+10</span></h4>
-					{{/if}}
+					</div>
+				{{/if}}
+				<div class="achievement">
 					<h4><i class="fa fa-bed"></i> Steps So Far: <span class="purple">{{currentSteps}}</span></h4>
+				</div>
+				<div class="achievement">
+					<h4><i class="fa fa-bed"></i> Floors Climbed: <span class="purple">{{currentFloors}}</span></h4>
+				</div>
+				<div class="achievement">
+					<h4><i class="fa fa-bed"></i> Active Minutes: <span class="purple">{{currentActiveMinutes}}</span></h4>
 				</div>
 			{{/each}}
 			</center>
@@ -44,12 +52,18 @@
 			</div>
 			{{#each getP2Achievements}}
 				{{#if sleepGoal}}
-					<div class="basic-div">
+					<div class="achievement">
 						<h4><i class="fa fa-bed"></i> Slept 7+ Hours: <span class="purple">+10</span></h4>
 					</div>
 				{{/if}}
-				<div class="basic-div">
+				<div class="achievement">
 					<h4><i class="fa fa-bed"></i> Steps So Far: <span class="purple">{{currentSteps}}</span></h4>
+				</div>
+				<div class="achievement">
+					<h4><i class="fa fa-bed"></i> Floors Climbed: <span class="purple">{{currentFloors}}</span></h4>
+				</div>
+				<div class="achievement">
+					<h4><i class="fa fa-bed"></i> Active Minutes: <span class="purple">{{currentActiveMinutes}}</span></h4>
 				</div>
 			{{/each}}
 			</center>
