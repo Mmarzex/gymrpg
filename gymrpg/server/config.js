@@ -78,11 +78,11 @@ Meteor.methods({
 
 		var battle = Battles.findOne({_id: battleId});
 		var score = 0;
-		if(battle.playerOne === Meteor.userId()) {
-			score = battle.p1_points;
-		} else {
-			score = battle.p2_points;
-		}
+		// if(battle.playerOne === Meteor.userId()) {
+		// 	score = battle.p1_points;
+		// } else {
+		// 	score = battle.p2_points;
+		// }
 
 		if(Achievements.find({battleId: battleId, userId: userId}).count() === 0){
 			console.log("currentSteps: " + currentSteps);
