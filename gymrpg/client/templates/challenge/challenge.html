@@ -13,7 +13,7 @@
 				<h3> Your Current Battles: </h3>
 					{{#each meBattles}}
 					<!-- Loop through users in current users "battle list" -->
-					<button id="battleButton" class="btn btn-lg btn-block btn-default battles" href="{{pathFor 'battle'}}">
+					<button id="battleButton" class="btn btn-lg btn-block btn-default battles" battleId="{{_id}}" href="{{pathFor 'battle'}}">
 						<h4><img src="/images/challenge-large.png"> &nbsp;{{playerOneName}} <b>vs</b> {{playerTwoName}} </h4>
 					</button>
 					{{/each}}
