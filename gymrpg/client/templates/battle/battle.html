@@ -1,12 +1,17 @@
 <template name="battle">
 	<div class="row">
+		{{#each currentBattle}}
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 			<center>
 			<div>
 				<!--Display a players game score-->
+				{{#if isPlayerOneWinning}}
+				<img src="/images/winner.png" />
+				{{else}}
 				<div class="filler"></div>
-				<h3>Player One</h3>
-				<h1><b>150</b></h1>
+				{{/if}}
+				<h3>{{playerOneName}}</h3>
+				<h1><b>{{p1_points}}</b></h1>
 				<h6>points</h6>
 			</div>
 			<div class="basic-div">
@@ -24,12 +29,17 @@
 			<center>
 			<div>
 				<!--Display a players game score-->
+				{{#if isPlayerTwoWinning}}
 				<img src="/images/winner.png" />
-				<h3>Player Two</h3>
-				<h1><b>486</b></h1>
+				{{else}}
+				<div class="filler"></div>
+				{{/if}}
+				<h3>{{playerTwoName}}</h3>
+				<h1><b>{{p2_points}}</b></h1>
 				<h6>points</h6>
 			</div>
 			</center>
 		</div>
+		{{/each}}
 	</div>
 </template>

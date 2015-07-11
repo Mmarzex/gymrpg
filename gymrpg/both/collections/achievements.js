@@ -1,15 +1,15 @@
-Battles = new Mongo.Collection('battles');
+Achievements = new Mongo.Collection('achievements');
 
 if(Meteor.is_server)
-	Meteor.publish('battles', function(){
-		return Battles.find();
+	Meteor.publish('achievements', function(){
+		return Achievements.find();
 	});
 
 
-Battles.helpers({
+Achievements.helpers({
 
 });
-Battles.allow({
+Achievements.allow({
 		'insert': function(userId,doc){
 			return true;
 		},
@@ -18,7 +18,7 @@ Battles.allow({
 		}
 	});
 if(Meteor.is_server) {
-	Battles.allow({
+	Achievements.allow({
 		'insert': function(userId,doc){
 			return true;
 		},
@@ -28,6 +28,6 @@ if(Meteor.is_server) {
 	});
 }
 
-Battles.before.insert(function (userId, doc) {
+Achievements.before.insert(function (userId, doc) {
   doc.createdAt = moment().toDate();
 });
