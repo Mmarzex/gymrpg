@@ -4,13 +4,12 @@
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 			<center>
 			<div>
-				<!--Display a players game score-->
 				{{#if isPlayerOneWinning}}
 				<img src="/images/winner.png" />
 				{{else}}
 				<div class="filler"></div>
 				{{/if}}
-				<h3>{{playerOneName}}</h3>
+				<h2>{{playerOneName}}</h2>
 				<h1><b>{{p1_points}}</b></h1>
 				<h6>points</h6>
 			</div>
@@ -30,6 +29,15 @@
 					<h4><i class="fa fa-clock-o"></i> Active Minutes: <span class="purple">{{currentActiveMinutes}}</span></h4>
 				</div>
 			{{/each}}
+			<br />
+			<br />
+			<h3>Advantages:</h3>
+				<button class="btn btn-default btn-lg btn-block achievement">
+					<h6><i class="fa fa-asterisk purple"></i> Gain x2 Points for Running During Battle</h6>
+				</button>
+				<button class="btn btn-default btn-lg btn-block achievement">
+					<h6><i class="fa fa-asterisk purple"></i> -50 Points to Your Opponent</h6>
+				</button>
 			</center>
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -46,7 +54,7 @@
 				{{else}}
 				<div class="filler"></div>
 				{{/if}}
-				<h3>{{playerTwoName}}</h3>
+				<h2>{{playerTwoName}}</h2>
 				<h1><b>{{p2_points}}</b></h1>
 				<h6>points</h6>
 			</div>
