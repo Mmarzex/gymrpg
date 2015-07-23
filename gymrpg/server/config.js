@@ -47,7 +47,8 @@ Meteor.methods({
 	},
 	getSleep: function() {
 		var currentDate = moment();
-		var previousDay = currentDate.subtract(1, 'days');
+		var previousDay = currentDate;
+		// var previousDay = currentDate.subtract(1, 'days');
 		previousDay = previousDay.format('YYYY-MM-DD');
 		// console.log(previousDay);
 
@@ -57,7 +58,8 @@ Meteor.methods({
 	},
 	getCurrentSteps: function() {
 		var currentDate = moment();
-		var previousDay = currentDate.subtract(1, 'days');
+		var previousDay = currentDate;
+		// var previousDay = currentDate.subtract(1, 'days');
 		previousDay = previousDay.format('YYYY-MM-DD');
 		var result = fitbit.get('user/-/activities/date/' + previousDay + '.json');
 		console.log(result.data);
@@ -67,7 +69,8 @@ Meteor.methods({
 	},
 	getScoreForUser: function(userId, battleId) {
 		var currentDate = moment();
-		var previousDay = currentDate.subtract(1, 'days');
+		var previousDay = currentDate;
+		// var previousDay = currentDate.subtract(1, 'days');
 		previousDay = previousDay.format('YYYY-MM-DD');
 		var result = fitbit.get('user/-/activities/date/' + previousDay + '.json');
 		// console.log("Inside currentSTeps");
