@@ -70,10 +70,10 @@ Template.battle.rendered = function() {
 
 Template.battle.helpers({
 	currentBattle: function() {
-		console.log("MMEEEE BAATTLE");
+		// console.log("MMEEEE BAATTLE");
 		var battleId = Session.get('currentBattle');
 		var battle = Battles.find({_id: battleId});
-		console.log(battle);
+		// console.log(battle);
 		Session.set('currentBattleObject', Battles.findOne({_id: battleId}));
 		return battle;
 	},
@@ -86,9 +86,9 @@ Template.battle.helpers({
 		var battle = Session.get('currentBattleObject');
 		return battle.p1_points < battle.p2_points;
 	},
-	getP1Achievements: function() {
+	P1Achievements: function() {
 		var battle = Session.get('currentBattleObject');
-		var playerOneAchievements = Achievements.find({battleId: Session.get('currentBattle'), userId: battle.playerOne});
+		var playerOneAchievements = Achievements.findOne({battleId: Session.get('currentBattle'), userId: battle.playerOne});
 		playerOneAchievements.currentSteps = playerOneAchievements.currentSteps / 100;
 		playerOneAchievements.currentFloors = playerOneAchievements.currentFloors * 10;
 		return playerOneAchievements;
