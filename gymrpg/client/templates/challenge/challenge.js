@@ -37,7 +37,8 @@ Template.challenge.events({
 			playerTwoName: friend.profile.displayName,
 			p1_points: 0,
 			p2_points: 0,
-			end_time: ((new Date().getTime()/1000) + (new Date().getTime() + new Date().getTime())/1000).toFixed(0),
+			end_time: ((moment()).add(1, 'days')).format('YYYY-MM-DD'),
+			// end_time: ((new Date().getTime()/1000) + (new Date().getTime() + new Date().getTime())/1000).toFixed(0),
 			winner: "" 
 		});
 	},
