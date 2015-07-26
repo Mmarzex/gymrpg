@@ -114,8 +114,8 @@ Meteor.methods({
 			var currentSleep = (result.data.sleep)[0].minutesAsleep / 60;
 			if(currentSleep >= 7.0) {
 				score += 10;
+				Achievements.update({_id: currentAchievements._id}, {$set: {"sleepGoal": true}});
 			}
-			Achievements.update({_id: currentAchievements._id}, {$set: {"sleepGoal": true}});
 		}
 
 		if(currentSteps > currentAchievements.currentSteps && currentSteps > 100) {
